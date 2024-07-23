@@ -36,8 +36,6 @@ public class Bot extends TelegramLongPollingBot {
     private NasaImageCommand nasaFactCommand;
 
     private final BotConfigClass config;
-    public static final String CAT_FACT_URL = "https://catfact.ninja/fact";
-    public static final String DOG_IMAGE_URL = "https://dog.ceo/api/breeds/image/random";
     private boolean nasaFlag = false;
 
     @Autowired
@@ -52,7 +50,7 @@ public class Bot extends TelegramLongPollingBot {
     private void init() {
         List<BotCommand> commands = new ArrayList<>();
         commands.add(new BotCommand("/start", "Show commands with description"));
-        commands.add(new BotCommand("/cats", "Get a random fact about cats"));
+        commands.add(new BotCommand("/cats", "Get a random cat image and fact"));
         commands.add(new BotCommand("/dogs", "Get a random dog image"));
         commands.add(new BotCommand("/nasa", "Get a Astronomy picture of the Day"));
 

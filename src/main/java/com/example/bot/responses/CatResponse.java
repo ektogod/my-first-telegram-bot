@@ -7,4 +7,5 @@ import lombok.Data;
 @AllArgsConstructor
 public class CatResponse {
     private String fact;
+    private String catImageURL;
 }

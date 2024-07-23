@@ -12,18 +12,12 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class MessageService {
     private Bot bot;
 
-//    //@Autowired
-//    public void setBot(Bot bot){
-//        this.bot = bot;
-//    }
-
-
     public void sendWelcomeMessage(String username, long chatId) {
         String message = "Hi, " + username + "! We're glad to see you there! There are a couple of commands which are available for this bot:" +
                 '\n' + '\n' +
                 "/start: starts the bot and shows you a list of available commands." +
                 '\n' + '\n' +
-                "/cats: bot gives you a random fact connected with cats." +
+                "/cats: bot gives you a cat image and a random fact about cats." +
                 '\n' + '\n' +
                 "/dogs: bot sends you a random image of a funny dog." +
                 '\n' + '\n' +

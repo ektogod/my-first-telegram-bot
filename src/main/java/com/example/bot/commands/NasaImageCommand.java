@@ -24,7 +24,7 @@ public class NasaImageCommand extends Command{
     @Override
     public void run(Bot bot, long chatId) {
         try{
-            JSONObject object = ResponseService.createJSONObject(bot, chatId, "https://api.nasa.gov/planetary/apod?api_key=" + bot.getNasaToken() + "&date=" + date);
+            JSONObject object = ResponseService.createJSONObject("https://api.nasa.gov/planetary/apod?api_key=" + bot.getNasaToken() + "&date=" + date);
             NasaResponse nasaResponse = new NasaResponse(object.getString("url"),
                     object.getString("title"),
                     object.getString("explanation"));

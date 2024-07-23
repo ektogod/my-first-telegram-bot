@@ -23,14 +23,4 @@ public class BotConfigClass {
 
     @Value("${nasa.token}")
     private String nasaToken;
-
-//    @Bean
-//    public TelegramLongPollingBot telegramLongPollingBot(BotConfigClass config){
-//        return new Bot(config);
-//    }
-//
-//    @Bean
-//    public DefaultBotOptions defaultBotOptions(){
-//        return new DefaultBotOptions();
-//    }
 }
