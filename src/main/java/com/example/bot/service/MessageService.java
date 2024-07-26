@@ -21,7 +21,10 @@ public class MessageService {
                 '\n' + '\n' +
                 "/dogs: bot sends you a random image of a funny dog." +
                 '\n' + '\n' +
-                "/nasa: bot sends you an Astronomy picture of the Day (APOD) from NASA archives. After sending this command, write a date of APOD you want to see in YYYY-MM-DD format.";
+                "/nasa: bot sends you an Astronomy picture of the Day (APOD) from NASA archives. After sending this command, write a date of APOD you want to see in YYYY-MM-DD format." +
+                '\n' + '\n' +
+                "/fact: bot sends you a random useless fact.";
+
         sendMessage(message, chatId);
     }
 

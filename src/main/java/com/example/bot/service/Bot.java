@@ -2,6 +2,7 @@ package com.example.bot.service;
 
 import com.example.bot.commands.CatFactCommand;
 import com.example.bot.commands.DogImageCommand;
+import com.example.bot.commands.FactCommand;
 import com.example.bot.commands.NasaImageCommand;
 import com.example.bot.config.BotConfigClass;
 import lombok.Data;
@@ -35,6 +36,9 @@ public class Bot extends TelegramLongPollingBot {
     @Autowired
     private NasaImageCommand nasaFactCommand;
 
+    @Autowired
+    private FactCommand factCommand;
+
     private final BotConfigClass config;
     private boolean nasaFlag = false;
 
@@ -53,6 +57,7 @@ public class Bot extends TelegramLongPollingBot {
         commands.add(new BotCommand("/cats", "Get a random cat image and fact"));
         commands.add(new BotCommand("/dogs", "Get a random dog image"));
         commands.add(new BotCommand("/nasa", "Get a Astronomy picture of the Day"));
+        commands.add(new BotCommand("/fact", "Get a random useless fact"));
 
         try {
             execute(new SetMyCommands(commands, new BotCommandScopeDefault(), null));
@@ -84,6 +89,10 @@ public class Bot extends TelegramLongPollingBot {
                 case ("/nasa") -> {
                     messageService.sendMessage("Please enter the date in YYYY-MM-DD format.", chatId);
                     nasaFlag = true;
+                }
+                case ("/fact") -> {
+                    factCommand.run(this, chatId);
+                    nasaFlag = false;
                 }
                 default -> {
                     if (nasaFlag) {
