@@ -1,6 +1,6 @@
 package com.example.bot.service;
 
-import com.example.bot.commands.CatFactCommand;
+import com.example.bot.commands.CatCommand;
 import com.example.bot.commands.DogImageCommand;
 import com.example.bot.commands.FactCommand;
 import com.example.bot.commands.NasaImageCommand;
@@ -28,7 +28,7 @@ public class Bot extends TelegramLongPollingBot {
     private MessageService messageService;
 
     @Autowired
-    private CatFactCommand catFactCommand;
+    private CatCommand catFactCommand;
 
     @Autowired
     private DogImageCommand dogFactCommand;

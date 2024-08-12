@@ -1,4 +1,4 @@
-package com.example.bot.responses;
+package com.example.bot.dto;
 
 abstract public class Response {
 
